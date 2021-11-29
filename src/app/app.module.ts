@@ -4,8 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './modules/app.routing.module';
-import { FormLoginComponent } from './modules/login/components/form-login/form-login.component';
-import { FormRegisterComponent } from './modules/login/components/form-register/form-register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,8 @@ import { FormRegisterComponent } from './modules/login/components/form-register/
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
