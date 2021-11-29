@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Register } from '../models/register.model';
+import { Router } from '@angular/router';
+import { Register } from '../../models/register.model';
 
 @Component({
   selector: 'app-form-register',
@@ -11,12 +12,16 @@ export class FormRegisterComponent implements OnInit {
   public register: Register = { name: '', email: '', password: '' };
   public loading: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   public onRegister(event: any): void {
+  }
+
+  public onBackLogin(event: any): void {
+    this.router.navigate(['/login']);
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Credentials } from '../models/credential.model';
+import { Router } from '@angular/router';
+import { Credentials } from '../../models/credential.model';
 
 @Component({
   selector: 'app-form-login',
@@ -11,7 +12,7 @@ export class FormLoginComponent implements OnInit {
   public credential: Credentials = { email: '', password: '' };
   public loading: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,7 @@ export class FormLoginComponent implements OnInit {
   }
 
   public onRegister(event: any): void {
+    this.router.navigate(['/login/register']);
   }
 
 }
