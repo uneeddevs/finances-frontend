@@ -1,0 +1,19 @@
+<div class="card m-3">
+    <div class="card-body">
+        <div class="row m-3 text-center">
+            <div>
+                <strong class="font-size-25">Login</strong>
+            </div>
+            <img src="assets/uneeddevs.jpg" alt="logo image" width="50%"/>
+            <input id="name" name="name" type="text" class="form-control mt-3" placeholder="Name" [(ngModel)]="register.name" required/>
+            <input id="username" name="username" type="text" class="form-control mt-2" placeholder="email" [(ngModel)]="register.email" required/>
+            <input id="password" name="password" type="password" class="form-control mt-2 mb-2" placeholder="Password" [(ngModel)]="register.password" required/>
+            <div *ngIf="!loading">
+                <button type="button" (click)="onRegister($event)" class="btn btn-success m-2" >Register</button>
+            </div>
+            <div class="spinner-border mt-4" role="status" *ngIf="loading">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    </div>
+</div>
